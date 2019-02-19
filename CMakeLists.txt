@@ -80,6 +80,7 @@ add_definitions(-DUSE_INSTALL_TARGET)
 
 # Vtk
 # ******************************************************************************
+set(VTK_DIR C:/work/3rd/VTK711/vs2017/lib/cmake/vtk-7.1)
 find_package(VTK CONFIG REQUIRED)
 include(${VTK_USE_FILE})
 
