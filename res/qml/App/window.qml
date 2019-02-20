@@ -21,29 +21,12 @@ Window {
         anchors.top: parent.top;
     }
 
-    Lib.SplitView {
-        id: splitView;
-
+    Preview {
+        id: tabView;
         anchors.left: parent.left;
         anchors.right: parent.right;
         anchors.top: header.bottom;
         anchors.bottom: footer.top;
-
-        // leftItem: Code.Editor {
-        //     anchors.fill: parent;
-        // }
-
-        rightItem: Lib.TabView {
-            anchors.fill: parent;
-
-            Preview {
-                anchors.fill: parent;
-            }
-
-            LogView {
-                anchors.fill: parent;
-            }
-        }
     }
 
     TypeInfo.List {
