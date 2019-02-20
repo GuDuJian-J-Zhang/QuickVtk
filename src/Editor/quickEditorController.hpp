@@ -41,6 +41,7 @@ namespace quick {
             bool m_modified = false;
             Highlighter* m_highlighter = nullptr;
             QQuickTextDocument* m_document;
+			QString m_code_text;
         private:
             auto setFileUrl(const QString&) -> void;
             auto setFileName(const QString&) -> void;
@@ -69,6 +70,7 @@ namespace quick {
             auto getModified() -> bool;
             auto toggleExpanded() -> void;
             auto getFontSize() -> int;
+			auto setCodeText(const QString&) -> void;
             ~Controller();
         signals:
             void select(int start, int end);

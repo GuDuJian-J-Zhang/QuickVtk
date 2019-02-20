@@ -95,7 +95,12 @@ namespace quick {
             if (IO::FileExists(fileUrl)) {
                 Search::instance->invalidate();
                 Errors::instance->clear();
-                this->m_document->textDocument()->setPlainText(IO::Read::TextFromUrl(fileUrl));
+				if (this->m_document) {
+					this->m_document->textDocument()->setPlainText(IO::Read::TextFromUrl(fileUrl));
+				}
+				else {
+					this->setCodeText(IO::Read::TextFromUrl(fileUrl));
+				}
                 this->setModified(false);
                 this->setFileUrl(fileUrl);
 
@@ -167,7 +172,14 @@ namespace quick {
             return this->m_fontSize;
         }
 
+		auto Controller::setCodeText(const QString& code_text) -> void {
+			this->m_code_text = code_text;
+		}
+
         auto Controller::getText() -> QString {
+			if (!this->m_document) {
+				return this->m_code_text;
+			}
             return this->m_document->textDocument()->toPlainText();
         }
 

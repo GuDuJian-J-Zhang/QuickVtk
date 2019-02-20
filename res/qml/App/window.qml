@@ -29,9 +29,9 @@ Window {
         anchors.top: header.bottom;
         anchors.bottom: footer.top;
 
-        leftItem: Code.Editor {
-            anchors.fill: parent;
-        }
+        // leftItem: Code.Editor {
+        //     anchors.fill: parent;
+        // }
 
         rightItem: Lib.TabView {
             anchors.fill: parent;
